@@ -7,6 +7,7 @@ import ActionButtons from './components/actionButtons';
 import { detectLanguage } from './services/languageService'; 
 import { summarizeText } from './services/summarizationService'; 
 import { translateText } from './services/translateService'; 
+import './App.css';
 
 const App = () => {
     const [output, setOutput] = useState('');
@@ -51,7 +52,6 @@ const App = () => {
 
     return (
         <div className="app">
-            <h1>AI-Powered Text Processing Interface</h1>
             <ChatInput onSend={handleSend} />
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <ChatOutput output={output} language={language} summary={summary} translation={translation} />
@@ -62,3 +62,4 @@ const App = () => {
 };
 
 export default App;
+

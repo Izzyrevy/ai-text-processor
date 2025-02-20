@@ -1,5 +1,18 @@
+body{
+  background: 
+        linear-gradient(to right, rgba(70, 67, 67, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://wallpapers.com/images/high/microsoft-translate-dark-blue-background-v3xja6spmqq6gb6t.webp');
+  background-position: center;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: 2rem;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .App-logo {
@@ -36,3 +49,54 @@
     transform: rotate(360deg);
   }
 }
+
+.action-buttons {
+  margin: 20px 0;
+}
+
+.btn {
+  padding: 10px 15px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.language-label{
+  color: #fff;
+  margin-left: 20px;
+}
+
+
+.language-select{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #008CBA;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+
+.summarize-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.summarize-btn:hover {
+  background-color: #45a049;
+}
+
+.translate-btn {
+  background-color: #008CBA; /* Blue */
+  color: white;
+}
+
+.translate-btn:hover {
+  background-color: #007B9E;
+}
+
+

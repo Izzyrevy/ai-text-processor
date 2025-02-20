@@ -4,17 +4,17 @@ export const detectLanguage = async (text) => {
     try {
         console.log('Detecting language for:', text);
         
-        if ('ai' in window && 'translator' in window.ai) {
-            const translator = await window.ai.translator.create({
-                sourceLanguage: 'en', 
-                targetLanguage: 'fr', 
-            });
+        
+        if ('translation' in window && 'createDetector' in window.translation) {
+            const detector = await window.translation.createDetector(); // Create a language detector
 
-            const detectedLanguage = await translator.detect(text);
+            // Use the detector to detect the language
+            const [{ detectedLanguage }] = await detector.detect(text);
             console.log('Detected Language:', detectedLanguage);
-            return detectedLanguage.language; 
+            return detectedLanguage; 
         } else {
-            throw new Error('Translator API is not supported in this browser.');
+            console.warn('Language detection API is not supported in this browser. Falling back to a different method.');
+            return 'en'; // Default to English or implement a different detection method
         }
     } catch (error) {
         console.error('Error detecting language:', error.message || error);

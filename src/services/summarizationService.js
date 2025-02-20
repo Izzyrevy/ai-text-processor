@@ -2,13 +2,25 @@
 
 export const summarizeText = async (text) => {
     try {
-        // Check if the AI Summarizer API is supported
         if ('ai' in window && 'summarizer' in window.ai) {
-            const summarizer = await window.ai.summarizer.create();
+            const capabilities = await window.ai.summarizer.capabilities();
+            if (capabilities.available === 'no') {
+                throw new Error('Summarizer API is not usable at the moment.');
+            }
 
-            // Use the summarization feature
-            const summary = await summarizer.summarize(text);
-            return summary; // Adjust based on the API response structure
+            const summarizer = await window.ai.summarizer.create({
+                sharedContext: 'This text is intended for summarization.',
+                type: 'key-points', 
+                format: 'markdown', 
+                length: 'medium', 
+                token: process.env.REACT_APP_SUMMARIZER_API_TOKEN, 
+            });
+
+            const summary = await summarizer.summarize(text, {
+                context: 'This text is a lengthy article or document that needs summarization.',
+            });
+
+            return summary; 
         } else {
             throw new Error('Summarizer API is not supported in this browser.');
         }

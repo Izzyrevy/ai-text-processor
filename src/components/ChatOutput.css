@@ -1,0 +1,29 @@
+/* src/components/ChatOutput.css */
+.chat-output-container {
+    padding: 15px;
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    min-height: 100px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.247);
+    margin: 20px;
+}
+
+.chat-output {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.output-text {
+    margin: 0 0 10px;
+}
+
+.language-info,
+.summary-info,
+.translation-info {
+    margin: 5px 0;
+    font-weight: bold;
+}

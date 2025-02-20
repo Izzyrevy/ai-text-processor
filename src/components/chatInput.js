@@ -1,5 +1,6 @@
 // src/components/ChatInput.js
 import React, { useState } from 'react';
+import './ChatInput.css'; // Import the CSS file for styling
 
 const ChatInput = ({ onSend }) => {
     const [text, setText] = useState('');
@@ -12,14 +13,15 @@ const ChatInput = ({ onSend }) => {
     };
 
     return (
-        <div className="chat-input">
+        <div className="chat-input-container">
             <textarea
+                className="chat-input"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Type your message..."
                 aria-label="Input text area"
             />
-            <button onClick={handleSend} aria-label="Send message">
+            <button className="send-button" onClick={handleSend} aria-label="Send message">
                 <span role="img" aria-label="send">📤</span>
             </button>
         </div>
