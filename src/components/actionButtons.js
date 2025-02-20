@@ -1,4 +1,4 @@
-// src/components/ActionButtons.js
+// src/components/actionButtons.js
 import React from 'react';
 
 const ActionButtons = ({ onSummarize, onTranslate, isSummarizeEnabled }) => {
@@ -11,4 +11,4 @@ const ActionButtons = ({ onSummarize, onTranslate, isSummarizeEnabled }) => {
     );
 };
 
- export default ActionButtons;
+export default ActionButtons;

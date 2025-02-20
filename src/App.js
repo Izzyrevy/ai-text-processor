@@ -50,16 +50,22 @@ const App = () => {
         }
     };
 
+    // Determine if the summarize button should be enabled
+    const isSummarizeEnabled = output.length > 150 && language === 'en';
+
     return (
         <div className="app">
             <ChatInput onSend={handleSend} />
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <ChatOutput output={output} language={language} summary={summary} translation={translation} />
             <LanguageSelector selectedLanguage={selectedLanguage} onChange={(e) => setSelectedLanguage(e.target.value)} />
-            <ActionButtons onSummarize={handleSummarize} onTranslate={handleTranslate} />
+            <ActionButtons 
+                onSummarize={handleSummarize} 
+                onTranslate={handleTranslate} 
+                isSummarizeEnabled={isSummarizeEnabled} // Pass the state to ActionButtons
+            />
         </div>
     );
 };
 
 export default App;
-

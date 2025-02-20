@@ -1,15 +1,10 @@
-// src/services/translateService.js
 
 export const translateText = async (text, targetLanguage) => {
     try {
-        // Use window instead of self
         if ('ai' in window && 'translator' in window.ai) {
-            const token = process.env.REACT_APP_TRANSLATION_API_TOKEN; // Access the token from environment variables
-
             const translator = await window.ai.translator.create({
-                sourceLanguage: 'en', // Set the source language
-                targetLanguage: targetLanguage, // Use the target language passed as a parameter
-                token: token, // Include the token in the options
+                sourceLanguage: 'en', 
+                targetLanguage: targetLanguage, 
             });
 
             const translatedText = await translator.translate(text);
