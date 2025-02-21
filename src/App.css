@@ -5,7 +5,7 @@ body {
       url('https://wallpapers.com/images/high/microsoft-translate-dark-blue-background-v3xja6spmqq6gb6t.webp');
       background-blend-mode: overlay;
       box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(3px);
       -webkit-backdrop-filter: blur(2px);
   background-repeat: no-repeat;
   background-position: center;
@@ -13,6 +13,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   margin: 0;
+  min-height: 100vh;
 }
 
 .app {
@@ -21,11 +22,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   max-width: 600px;
-  min-height: 100vh;
   padding-right: 1rem;
   margin: 0 auto;
+  min-height: 90vh;
   padding: 20px;
   background: transparent;
+  overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
