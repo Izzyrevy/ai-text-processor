@@ -1,29 +1,30 @@
-/* src/components/ChatInput.css */
+
 .chat-input-container {
     display: flex;
     align-items: center;
     margin: 10px auto;
     width: 100%;
-    max-width: 600px; /* Limit the width for better appearance */
+    max-width: 600px; 
 }
 
 .chat-input {
     flex: 1;
     width: 100%;
-    min-height: 60px; /* Minimum height for the input area */
+    border: 2px solid #008CBA;
+    min-height: 60px; 
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    resize: none; /* Prevent resizing */
+    resize: none;
     transition: border-color 0.3s;
+    margin-bottom: 10px; 
 }
 
 .chat-input:focus {
-    border-color: #008CBA; /* Change border color on focus */
-    outline: none; /* Remove default outline */
+    border-color: #008CBA; 
+    outline: none; 
 }
 
 .send-button {
@@ -39,5 +40,5 @@
 }
 
 .send-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }

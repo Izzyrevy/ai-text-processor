@@ -1,4 +1,3 @@
-// src/components/ChatInput.js
 import React, { useState } from 'react';
 import './ChatInput.css';
 

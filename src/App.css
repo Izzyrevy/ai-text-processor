@@ -3,14 +3,24 @@ body {
   background: 
       linear-gradient(to right, rgba(70, 67, 67, 0.5), rgba(0, 0, 0, 0.5)),
       url('https://wallpapers.com/images/high/microsoft-translate-dark-blue-background-v3xja6spmqq6gb6t.webp');
+      background-blend-mode: overlay;
+      box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+  background-repeat: no-repeat;
   background-position: center;
   font-family: 'Trebuchet MS', Arial, sans-serif;
   background-size: cover;
   background-attachment: fixed;
   margin: 0;
+  height: 100vh;
 }
 
 .app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 600px;
   min-height: 100vh;
   padding-right: 1rem;
@@ -18,7 +28,6 @@ body {
   padding: 20px;
   background: transparent;
   border-radius: 8px;
-  border: 2px solid #008CBA;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -37,6 +46,7 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
 
 .btn {
   padding: 10px 15px;

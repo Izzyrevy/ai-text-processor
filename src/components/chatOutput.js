@@ -1,4 +1,4 @@
-// src/components/ChatOutput.js
+
 import React from 'react';
 import './ChatOutput.css';
 
