@@ -55,15 +55,16 @@ const App = () => {
 
     return (
         <div className="app">
-            <ChatInput onSend={handleSend} />
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            <h1>AI Text Processing Suite</h1>
             <ChatOutput output={output} language={language} summary={summary} translation={translation} />
             <LanguageSelector selectedLanguage={selectedLanguage} onChange={(e) => setSelectedLanguage(e.target.value)} />
+            <ChatInput onSend={handleSend} />
             <ActionButtons 
                 onSummarize={handleSummarize} 
                 onTranslate={handleTranslate} 
-                isSummarizeEnabled={isSummarizeEnabled} // Pass the state to ActionButtons
+                isSummarizeEnabled={isSummarizeEnabled} 
             />
+            {error && <p className="error-message">{error}</p>}
         </div>
     );
 };

@@ -1,57 +1,41 @@
-body{
+/* src/App.css */
+body {
   background: 
-        linear-gradient(to right, rgba(70, 67, 67, 0.5), rgba(0, 0, 0, 0.5)),
-        url('https://wallpapers.com/images/high/microsoft-translate-dark-blue-background-v3xja6spmqq6gb6t.webp');
+      linear-gradient(to right, rgba(70, 67, 67, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://wallpapers.com/images/high/microsoft-translate-dark-blue-background-v3xja6spmqq6gb6t.webp');
   background-position: center;
   font-family: 'Trebuchet MS', Arial, sans-serif;
   background-size: cover;
   background-attachment: fixed;
-  margin-top: 2rem;
+  margin: 0;
 }
 
-.App {
-  text-align: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  max-width: 600px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-right: 1rem;
+  margin: 0 auto;
+  padding: 20px;
+  background: transparent;
+  border-radius: 8px;
+  border: 2px solid #008CBA;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  text-align: center;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-message {
+  color: red;
+  text-align: center;
 }
 
 .action-buttons {
   margin: 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
@@ -65,21 +49,24 @@ body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.language-label{
+.language-label {
   color: #fff;
-  margin-left: 20px;
+  margin-right: 10px;
 }
 
-
-.language-select{
+.language-select {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: #008CBA;
   color: #fff;
   border-radius: 5px;
   padding: 5px;
-  margin-left: 10px;
 }
 
+.language-selector {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
 
 .summarize-btn {
   background-color: #4CAF50; /* Green */
@@ -98,5 +85,3 @@ body{
 .translate-btn:hover {
   background-color: #007B9E;
 }
-
-

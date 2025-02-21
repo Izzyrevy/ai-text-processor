@@ -2,13 +2,15 @@
 .chat-output-container {
     padding: 15px;
     display: flex;
-    width: 100%;
-    max-width: 500px;
-    min-height: 100px;
+    justify-content: center;
+    flex-direction: column; /* Stack items vertically */
+    width: 90%;
+    max-width: 600px; /* Limit the width for better appearance */
+    min-height: 100px; /* Minimum height for the output area */
     background-color: #f9f9f9;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.247);
-    margin: 20px;
+    margin: 1 auto;
 }
 
 .chat-output {
@@ -19,11 +21,14 @@
 
 .output-text {
     margin: 0 0 10px;
+    font-weight: bold; /* Make the output text bold */
+    color: #333; /* Darker color for better readability */
 }
 
 .language-info,
 .summary-info,
 .translation-info {
     margin: 5px 0;
-    font-weight: bold;
+    font-weight: normal; /* Normal weight for additional info */
+    color: #555; /* Slightly lighter color for additional info */
 }

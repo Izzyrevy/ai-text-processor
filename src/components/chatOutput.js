@@ -1,6 +1,6 @@
 // src/components/ChatOutput.js
 import React from 'react';
-import './ChatOutput.css'; // Import the CSS file for styling
+import './ChatOutput.css';
 
 const ChatOutput = ({ output, language, summary, translation }) => {
     return (

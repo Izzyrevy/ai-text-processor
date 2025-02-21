@@ -2,9 +2,22 @@
 
 export const summarizeText = async (text) => {
     try {
+        // Check for WebGPU support
+        if (!navigator.gpu) {
+            throw new Error('WebGPU is not supported in this browser.');
+        }
+
+        // Request a GPU adapter
+        const adapter = await getGPUAdapter();
+        if (!adapter) {
+            console.warn('No compatible GPU adapter found. Summarization may be limited.');
+        }
+
         // Check if the Summarizer API is supported
         if ('ai' in window && 'summarizer' in window.ai) {
             const capabilities = await window.ai.summarizer.capabilities();
+            console.log('Summarizer capabilities:', capabilities);
+                
             const available = capabilities.available;
 
             if (available === 'no') {
@@ -44,3 +57,38 @@ export const summarizeText = async (text) => {
         throw new Error('Summarization failed. Please try again later.');
     }
 };
+
+// Function to get a compatible GPU adapter
+async function getGPUAdapter() {
+    if (!navigator.gpu) {
+        console.error("WebGPU is not supported in this browser.");
+        return null;
+    }
+
+    try {
+        // Request a GPU adapter with specific options
+        const adapter = await navigator.gpu.requestAdapter({
+            powerPreference: 'high-performance', // Try 'low-power' or 'default' if this fails
+        });
+
+        if (!adapter) {
+            console.warn("No suitable GPU adapter found. Trying with different options...");
+            // Try requesting with different options
+            const alternativeAdapter = await navigator.gpu.requestAdapter({
+                powerPreference: 'low-power' // Try a different power preference
+            });
+
+            if (!alternativeAdapter) {
+                console.error("No compatible GPU adapter found.");
+                return null;
+            }
+
+            return alternativeAdapter;
+        }
+
+        return adapter;
+    } catch (error) {
+        console.error("Error requesting GPU adapter:", error);
+        return null;
+    }
+}
