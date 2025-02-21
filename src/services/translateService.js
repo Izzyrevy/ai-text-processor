@@ -1,3 +1,4 @@
+
 export const translateText = async (text, targetLanguage) => {
     try {
         if ('ai' in window && 'translator' in window.ai) {
