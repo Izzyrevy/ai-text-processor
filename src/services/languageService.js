@@ -1,3 +1,4 @@
+import { toast } from 'sonner'; // Ensure you import toast
 
 export const detectLanguage = async (text) => {
     try {
@@ -10,6 +11,7 @@ export const detectLanguage = async (text) => {
             let detector;
             if (canDetect === 'no') {
                 console.warn('Language detector is not usable at the moment.');
+                toast.warn('Language detector is not usable at the moment. Defaulting to English.'); // Warning toast
                 return 'en'; 
             }
             if (canDetect === 'readily') {
@@ -28,13 +30,15 @@ export const detectLanguage = async (text) => {
             const results = await detector.detect(text);
             console.log('Detection results:', results);
  
+            toast.success('Language detected successfully.');
             return results[0].detectedLanguage; 
         } else {
             console.warn('Language detection API is not supported in this browser. Falling back to a different method.');
+            toast.warn('Language detection API is not supported. Defaulting to English.'); 
             return 'en'; 
         }
     } catch (error) {
         console.error('Error detecting language:', error.message || error);
-        throw new Error('Language detection failed. Please try again later.');
+        toast.error('Language detection failed. Please try again later.');
     }
 };

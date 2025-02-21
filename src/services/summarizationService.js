@@ -1,7 +1,9 @@
+import { toast } from 'sonner'; 
 
 export const summarizeText = async (text, context = 'This text is a lengthy article or document that needs summarization.') => {
     try {
         if (!text || typeof text !== 'string' || text.trim().length === 0) {
+            toast.error('Input text cannot be empty.'); 
             throw new Error('Input text cannot be empty.');
         }
 
@@ -12,7 +14,8 @@ export const summarizeText = async (text, context = 'This text is a lengthy arti
             const available = capabilities.available;
 
             if (available === 'no') {
-                throw new Error('Summarizer API is not usable at the moment.'); //It doesn't cross this code mark
+                toast.warn('Summarizer API is not usable at the moment.'); // Warning toast
+                throw new Error('Summarizer API is not usable at the moment.');
             }
 
             const options = {
@@ -33,14 +36,15 @@ export const summarizeText = async (text, context = 'This text is a lengthy arti
                 await summarizer.ready; 
             }
 
-    
             const summary = await summarizer.summarize(text, { context });
+            toast.success('Text summarized successfully!'); 
             return summary; 
         } else {
+            toast.warn('Summarizer API is not supported in this browser.'); 
             throw new Error('Summarizer API is not supported in this browser.');
         }
     } catch (error) {
         console.error('Error summarizing text:', error);
-        throw new Error('Summarization failed. Please try again later.');
+        toast.error('Summarization failed. Please try again later.');
     }
 };

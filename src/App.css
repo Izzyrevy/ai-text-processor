@@ -43,7 +43,8 @@ h1 {
 
 .action-buttons {
   display: flex;
-  align-items: center;
+  margin-right: 2rem;
+  gap: 20px;
   justify-content: center;
 }
 
@@ -60,7 +61,7 @@ h1 {
 
 .language-label {
   color: #fff;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .language-select {
@@ -78,7 +79,7 @@ h1 {
 }
 
 .summarize-btn {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: white;
 }
 
@@ -87,10 +88,36 @@ h1 {
 }
 
 .translate-btn {
-  background-color: #008CBA; /* Blue */
+  background-color: #008CBA;
   color: white;
 }
 
 .translate-btn:hover {
   background-color: #007B9E;
+}
+
+
+.toast-class {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 1rem;
+  margin: 10px; 
+  transition: opacity 0.3s ease-in-out;
+}
+
+.success-text {
+  background-color: #4CAF50; 
+  color: white; 
+  border: 1px solid #388E3C; 
+}
+
+.error-text {
+  background-color: #F44336; 
+  color: white; 
+  border: 1px solid #D32F2F; 
+}
+
+.toast-class:hover {
+  opacity: 0.9; 
 }
